@@ -21,10 +21,10 @@ struct _TreatTypesStringModule {
   TString *(*concat_charptr)(TString *left, char const *right);
   TString *(*concat)(TString *left, TString const *right);
 };
-struct _TreatTypesStringModule String;
+extern struct _TreatTypesStringModule String;
 
 // Implemented Traits:
 #include "../../traits/inspect/inspect.h"
-InspectTraitImplementation String_TraitImpls_Inspect;
+extern InspectTraitImplementation String_TraitImpls_Inspect;
 
 #endif //TREAT_TYPES_STRING_H

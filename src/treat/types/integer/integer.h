@@ -17,11 +17,11 @@ struct _TreatTypesIntegerModule {
   // Integer.destroy(TInteger integer) frees a previously created Integer structure.
   void(*destroy)(TInteger *integer);
 };
-struct _TreatTypesIntegerModule Integer;
+extern struct _TreatTypesIntegerModule Integer;
 
 
 // Implemented Traits:
 #include "../../traits/inspect/inspect.h"
-InspectTraitImplementation Integer_TraitImpls_Inspect;
+extern InspectTraitImplementation Integer_TraitImpls_Inspect;
 
 #endif //TREAT_TYPES_INTEGER_H_

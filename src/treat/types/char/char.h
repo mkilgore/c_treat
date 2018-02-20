@@ -17,10 +17,10 @@ struct _TreatTypesCharModule {
   // Char.destroy(TChar char) frees a previously created Char structure.
   void (*destroy)(TChar *character);
 };
-struct _TreatTypesCharModule Char;
+extern struct _TreatTypesCharModule Char;
 
 // Implemented Traits:
 #include "../../traits/inspect/inspect.h"
-InspectTraitImplementation Char_TraitImpls_Inspect;
+extern InspectTraitImplementation Char_TraitImpls_Inspect;
 
 #endif //TREAT_TYPES_CHAR_H
