@@ -1,0 +1,3 @@
+
+objs-y += inspect.o
+
