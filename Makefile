@@ -90,6 +90,7 @@ ifeq ($(CONFIG_PROF),y)
 endif
 
 $(eval $(call subdir_inc,src))
+$(eval $(call subdir_inc,src_container_of))
 
 CLEAN_LIST += $(BIN)
 CLEAN_LIST += $(PROG)
@@ -97,9 +98,9 @@ CLEAN_LIST += $(PROG)
 # Actual entry
 real-all: $(PROG)
 
-$(PROG): ./src.o | $(BIN)
+$(PROG): ./src.o ./src_container_of.o | $(BIN)
 	@echo " CCLD    $@"
-	$(Q)$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $< $(LIBFLAGS)
+	$(Q)$(CC) $(LDFLAGS) $(CFLAGS) -o $@ ./src.o ./src_container_of.o $(LIBFLAGS)
 
 dist: clean
 	$(Q)mkdir -p $(EXE)-$(C_ASYNC_VERSION_N)

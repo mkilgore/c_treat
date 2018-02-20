@@ -9,6 +9,8 @@
 #include "treat/types/integer/integer.h"
 #include "treat/with.macro"
 
+int notmain(void);
+
 int main(void) {
   Treat.init();
 
@@ -33,4 +35,8 @@ int main(void) {
     Integer.destroy(bar);
 
   };
+
+
+  /* Call example2 */
+  notmain();
 }
