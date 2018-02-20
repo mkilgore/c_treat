@@ -6,6 +6,8 @@
 
 #include "../hash_map/hash_map.h"
 
+typedef struct _trait_object_base TraitObject;
+
 /*
 Any Treat Type struct needs to have a 'Type type' field
 as first field in its struct, so it can be pointer-cast to this Type struct.
@@ -13,13 +15,13 @@ as first field in its struct, so it can be pointer-cast to this Type struct.
 typedef struct {
   size_t size;
   char const *name;
-  void *(*ctor)(void *self, va_list *arguments);
-  void *(*dtor)(void *self);
+  void *(*ctor)(TraitObject *self, va_list *arguments);
+  void *(*dtor)(TraitObject *self);
 } Type;
 
-typedef struct {
-  void *type;
-} TypeRef;
+struct _trait_object_base {
+  const Type *type;
+};
 
 typedef struct {
   HashMap *implementations;

@@ -1,7 +1,7 @@
 #include "char.ih"
 
-void *Char_dtor(void *_self) {
-  TChar *self = _self;
+void *Char_dtor(TraitObject *_self) {
+  TChar *self = container_of(_self, TChar, object);
   // no-op
   return self;
 }

@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 
-size_t _HashMap_index (HashMap const *hash_map, void *const key);
+size_t _HashMap_index (HashMap const *hash_map, const void *const key);
 void _HashMap_resize(HashMap **hash_map_ref);
 
 

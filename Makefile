@@ -11,7 +11,7 @@ C_TREAT_VERSION_N := $(C_TREAT_VERSION).$(C_TREAT_SUBLEVEL).$(C_TREAT_PATCH)
 
 LIBFLAGS :=
 
-CFLAGS  += -I'./src' -DC_TREAT_VERSION_N="$(C_TREAT_VERSION_N)"
+CFLAGS  += -I'./include' -I'./src' -DC_TREAT_VERSION_N="$(C_TREAT_VERSION_N)"
 
 # 'tree' references the current directory later-on
 tree := .

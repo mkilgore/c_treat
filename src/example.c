@@ -13,22 +13,22 @@ int main(void) {
   Treat.init();
 
   T_with(TString * my_str, String.new("foo bar baz")) {
-    Inspect.inspect(my_str);
+    Inspect.inspect(&my_str->object);
     String.concat_charptr(my_str, " qux");
     T_with(TString *other_str, String.new(" la la la")) {
       String.concat(my_str, other_str);
     }
-    Inspect.inspect(my_str);
+    Inspect.inspect(&my_str->object);
   };
 
   T_with(TChar * baz, Char.new('b')) {
-    Inspect.inspect(baz);
-    Inspect.inspect(baz);
+    Inspect.inspect(&baz->object);
+    Inspect.inspect(&baz->object);
 
     TChar *foo = Char.new('a');
     TInteger *bar = Integer.new(1234);
-    Inspect.inspect(foo);
-    Inspect.inspect(bar);
+    Inspect.inspect(&foo->object);
+    Inspect.inspect(&bar->object);
     Char.destroy(foo);
     Integer.destroy(bar);
 

@@ -3,8 +3,8 @@
 
 #include <stdio.h>
 
-void Char_TraitImpls_Inspect_inspect(void *obj_ptr) {
-  TChar *obj = (TChar *) obj_ptr;
+void Char_TraitImpls_Inspect_inspect(TraitObject *obj_ptr) {
+  TChar *obj = container_of(obj_ptr, TChar, object);
   printf("TChar: {character: %c}\n", obj->character);
 }
 

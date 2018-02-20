@@ -5,7 +5,7 @@
 
 // Data Structure:
 typedef struct {
-  TypeRef typeref;
+  TraitObject object;
   char *str;
   size_t len;
   size_t capacity;

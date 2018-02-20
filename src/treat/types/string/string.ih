@@ -3,6 +3,7 @@
 
 #include "string.h"
 #include "../../treat.h"
+#include "container_of.h"
 
 #include <string.h>
 #include <stdlib.h>
@@ -16,7 +17,7 @@ TString *String_concat_charptr(TString *left, char const *right);
 TString *String_concat(TString *left, TString const *right);
 
 // Internal functions:
-void *String_ctor(void *self, va_list *args);
-void *String_dtor(void *self);
+void *String_ctor(TraitObject *self, va_list *args);
+void *String_dtor(TraitObject *self);
 
 #endif //TREAT_TYPES_STRING_IH

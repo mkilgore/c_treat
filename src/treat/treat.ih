@@ -9,7 +9,7 @@
 #include "utils/alloc.h"
 
 void Treat_init();
-void *Treat_new(const void *type, ...);
-void Treat_destroy(void *obj);
+void *Treat_new(const Type *type, ...);
+void Treat_destroy(TraitObject *obj);
 
 #endif //TREAT_IH_

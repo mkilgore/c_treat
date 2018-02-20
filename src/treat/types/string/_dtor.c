@@ -2,8 +2,8 @@
 
 #include <stdio.h>
 
-void *String_dtor(void *_self) {
-  TString *self = _self;
+void *String_dtor(TraitObject *_self) {
+  TString *self = container_of(_self, TString, object);
 
   free(self->str);
 

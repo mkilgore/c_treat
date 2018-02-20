@@ -1,14 +1,13 @@
 #include "treat.ih"
 
-void *Treat_new(const void * _type, ...) {
-  const Type *type = _type;
-  void *obj = safe_calloc(1, type->size);
+void *Treat_new(const Type *type, ...) {
+  TraitObject *obj = safe_calloc(1, type->size);
   /* assert(obj); */
 
-  *(const Type **) obj = type;
+  obj->type = type;
   if(type->ctor) {
     va_list args;
-    va_start(args, _type);
+    va_start(args, type);
     obj = type->ctor(obj, &args);
     va_end(args);
   }

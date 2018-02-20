@@ -1,5 +1,5 @@
 #include "integer.ih"
 
 void Integer_destroy(TInteger *integer) {
-  Treat.destroy(integer);
+  Treat.destroy(&integer->object);
 }

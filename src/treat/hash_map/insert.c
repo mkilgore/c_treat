@@ -1,6 +1,6 @@
 #include "hash_map.ih"
 
-void HashMap_insert(HashMap **hash_map_ref, void *const key, void *const value) {
+void HashMap_insert(HashMap **hash_map_ref, const void *const key, void *const value) {
   HashMap *hash_map = *hash_map_ref;
   size_t const index = _HashMap_index(hash_map, key);
   /* printf("HTC: %lu, Inserting %s at index %lu\n", hash_map->capacity, key, index); */

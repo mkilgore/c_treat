@@ -5,7 +5,7 @@
 
 // Data Structure:
 typedef struct {
-  TypeRef typeref;
+  TraitObject object;
   int integer;
 } TInteger;
 

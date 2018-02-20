@@ -1,7 +1,7 @@
 #include "string.ih"
 
-void *String_ctor(void *_self, va_list *args) {
-  TString *self = _self;
+void *String_ctor(TraitObject *_self, va_list *args) {
+  TString *self = container_of(_self, TString, object);
   char const *string = va_arg(*args, char const *);
 
   size_t len = self->len = strlen(string);

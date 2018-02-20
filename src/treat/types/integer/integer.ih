@@ -3,13 +3,14 @@
 
 #include "integer.h"
 #include "../../treat.h"
+#include "container_of.h"
 
 // Exposed through API:
 TInteger *Integer_new(int integer);
 void Integer_destroy(TInteger *integer);
 
 // Internal functions:
-void *Integer_ctor(void *self, va_list *args);
-void *Integer_dtor(void *self);
+void *Integer_ctor(TraitObject *self, va_list *args);
+void *Integer_dtor(TraitObject *self);
 
 #endif //TREAT_TYPES_INTEGER_IH_

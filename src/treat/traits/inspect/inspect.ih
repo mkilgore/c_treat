@@ -3,6 +3,6 @@
 
 #include "inspect.h"
 
-void Inspect_inspect(void *obj);
+void Inspect_inspect(TraitObject *obj);
 
 #endif //TREAT_TRAITS_INSPECT_IH_

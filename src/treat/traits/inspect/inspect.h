@@ -5,12 +5,12 @@
 
 struct _TreatTraitsInspectStruct {
   TraitType trait;
-  void (*inspect)(void *);
+  void (*inspect)(TraitObject *);
 };
-struct _TreatTraitsInspectStruct Inspect;
+extern struct _TreatTraitsInspectStruct Inspect;
 
 typedef struct {
-  void (*inspect)(void *);
+  void (*inspect)(TraitObject *);
 } InspectTraitImplementation;
 
 #endif //TREAT_TRAITS_INSPECT_H_

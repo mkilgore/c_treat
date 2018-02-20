@@ -1,7 +1,7 @@
 #include "integer.ih"
 
-void *Integer_dtor(void *_self) {
-  TInteger *self = _self;
+void *Integer_dtor(TraitObject *_self) {
+  TInteger *self = container_of(_self, TInteger, object);
   // no-op
-  return self;
+  return &self->object;
 }

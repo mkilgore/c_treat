@@ -6,13 +6,13 @@
 typedef struct {
   size_t size;
   size_t capacity;
-  void **keys;
+  const void **keys;
   void **values;
 } HashMap;
 
 HashMap *HashMap_new(size_t capacity);
 void HashMap_destroy(HashMap *hash_map);
-void HashMap_insert(HashMap **hash_map_ref, void *const key, void *const value);
-void *HashMap_lookup(HashMap *hash_map, void *const key);
+void HashMap_insert(HashMap **hash_map_ref, const void *const key, void *const value);
+void *HashMap_lookup(HashMap *hash_map, const void *const key);
 
 #endif //HASH_MAP_H

@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include "../utils/print.h"
 
-void Trait_add_impl(void *trait, void *type, void *impl);
-void *Trait_impl_for(void const *trait, Type *type);
+void Trait_add_impl(TraitType *trait, const Type *type, void *impl);
+void *Trait_impl_for(const TraitType *_trait, const Type *type);
 
 #endif //TREAT_TRAIT_IH_

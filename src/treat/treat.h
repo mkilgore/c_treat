@@ -11,8 +11,8 @@ struct _TraitImplementationTriple {
 };
 
 struct _TreatModule {
-  void *(*new)(const void * type, ...);
-  void (*destroy)(void *obj);
+  void *(*new)(const Type *type, ...);
+  void (*destroy)(TraitObject *obj);
   void (*init)();
 };
 struct _TreatModule Treat;

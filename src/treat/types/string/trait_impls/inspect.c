@@ -3,8 +3,8 @@
 
 #include <stdio.h>
 
-void String_TraitImpls_Inspect_inspect(void *obj_ptr) {
-  TString *obj = (TString *) obj_ptr;
+void String_TraitImpls_Inspect_inspect(TraitObject *obj_ptr) {
+  TString *obj = container_of(obj_ptr, TString, object);
   printf("TString: {str: \"%s\"}\n", obj->str);
 }
 

@@ -5,8 +5,8 @@
 
 // Module Interface:
 struct _TreatTraitModule {
-  void (*add_impl)(void *trait, void *type, void *impl);
-  void *(*impl_for)(void const *trait, Type *type);
+  void (*add_impl)(TraitType *trait, const Type *type, void *impl);
+  void *(*impl_for)(const TraitType *trait, const Type *type);
 };
 extern struct _TreatTraitModule const Trait;
 

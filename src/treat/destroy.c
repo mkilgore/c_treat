@@ -1,8 +1,7 @@
 #include "treat.ih"
 
-void Treat_destroy(void *obj) {
-  const Type **type_pointer = obj;
-  if(obj && *type_pointer && (*type_pointer)->dtor)
-    obj = (* type_pointer)->dtor(obj);
+void Treat_destroy(TraitObject *obj) {
+  if(obj && obj->type && obj->type->dtor)
+    obj = obj->type->dtor(obj);
   free(obj);
 }
